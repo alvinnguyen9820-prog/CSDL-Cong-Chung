@@ -1,0 +1,55 @@
+@startuml erd
+!pragma layout smetana
+left to right direction
+entity GiaoDich #ffe119
+entity CaNhan
+entity ToChuc
+entity NguoiThamGiaGiaoDich #ffe119
+entity CongChungVien #ffe119
+entity ToChucCongChung #ffe119
+entity LichSuHanhNghe
+entity VanBanCongChungDienTu
+entity TaiSanDat
+entity TaiSanTauKeoGheThuyen
+entity TaiSanOtoXeMay
+entity TaiSanTauBien
+entity TaiSanTauBay
+entity TaiSanSoTietKiem
+entity TaiSanCoPhieu
+entity TaiSanTraiPhieu
+entity TaiSanTauCa 
+entity TaiSanGiaoDich #ffe119
+
+CaNhan  ||..o{ NguoiThamGiaGiaoDich
+ToChuc  |o..o{ NguoiThamGiaGiaoDich 
+GiaoDich ||..{ NguoiThamGiaGiaoDich 
+GiaoDich ||..{ TaiSanGiaoDich
+GiaoDich ||..o{ LichSuThayDoiVanBanCongChung
+
+CongChungVien ||..{ GiaoDich
+ToChucCongChung ||..{ GiaoDich
+LichSuHanhNghe }..|| CongChungVien
+LichSuHanhNghe }..|| ToChucCongChung
+LichSuToChucCongChung }..|| ToChucCongChung
+
+VanBanCongChungDienTu |o..|| GiaoDich
+HoSoLuuTruDienTuDuocChuyenDoi |o..|| GiaoDich
+
+TaiSanGiaoDich }..|| TaiSanDat
+TaiSanGiaoDich }..|| TaiSanTauKeoGheThuyen
+TaiSanGiaoDich }..|| TaiSanOtoXeMay
+TaiSanGiaoDich }..|| TaiSanTauBien
+TaiSanGiaoDich }..|| TaiSanTauBay
+TaiSanGiaoDich }..|| TaiSanTauCa
+TaiSanGiaoDich }..|| TaiSanSoTietKiem
+TaiSanGiaoDich }..|| TaiSanCoPhieu
+TaiSanGiaoDich }..|| TaiSanTraiPhieu
+TaiSanGiaoDich }..|| TaiSanKhac
+TaiSanGiaoDich }..|| TaiSanBatDongSanKhac
+TaiSanGiaoDich }..|| TaiSanQHDMBBDSTL
+TaiSanGiaoDich }..|| TaiSanDatVaTaiSanGanLienVoiDat
+
+
+@enduml
+
+
