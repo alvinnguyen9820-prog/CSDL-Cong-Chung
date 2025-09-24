@@ -1,0 +1,11 @@
+@startuml CRUD_Matrix
+note as CRUD_Matrix
+| Entity / Usecase | ClassManager | StudentManager | TeacherManager |
+| :--------------- | :----------- | :------------- | :------------- |
+| Class            | C R U D      | -              | -              |
+| Student          | -            | C R U D        | -              |
+| Teacher          | -            | -              | C R U D        |
+| Enrollment       | R            | R              | R              |
+| ClassTeacher     | R            | R              | R              |
+end note
+@enduml

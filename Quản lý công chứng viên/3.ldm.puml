@@ -1,0 +1,105 @@
+@startuml ldm
+!pragma layout smetana
+left to right direction
+
+entity GiaoDich
+entity CongChungVien
+entity ToChucCongChung
+entity ChuKySo
+
+entity LichSuHanhNghe
+entity LichSuCapNhatThongtinCCV
+entity LichSuCapNhatThongtinChungChi
+entity LichSuCapNhatThongtinChuKySo
+
+entity CongChungVien {
+  *congChungVienId: int <<PK>> - Id công chứng viên, tự động tăng
+  anh: string - Ảnh công chứng viên
+  soDienThoai: string - Số điện thoại của công chứng viên
+  chucVu: boolean - true nếu là trường văn phòng công chứng
+  email: string - Email công chứng viên
+  trangThai: string - Danh sách trạng thái là "Đang hoạt động" hoặc "Ngừng hoạt động"
+
+  toChucCongChungId: - ID tổ chức hành nghề công chứng hiện tại của công chứng viên
+  soQuyetDinh: string - Số quyết định đăng ký hành nghề công chứng viên
+  ngayQuyetDinh: datetime - Ngày quyết định
+  ngayHieuLuc: datetime - Ngày quyết định có hiệu lực
+  soThe: string - Số thẻ công chứng viên
+  trangThaiThe: string - Trạng thái thẻ công chứng viên "Đang hành nghề", "Chờ bổ sung", "Thu hồi thẻ", "Chờ cấp thẻ", "Từ chối cấp thẻ"
+  lyDoTuChoiCapThe: string - Lý do từ chối cấp thẻ
+
+  soGiayChungNhanDaoTaoNghe: string - Số giấy chứng nhận tốt nghiệp đào tạo nghề
+  ngayCapGiayDaoTaoNghe: datetime - Ngày cấp giấy chứng nhận tốt nghiệp đào tạo nghề
+  createdAt: datetime - Ngày tạo
+  updatedAt: datetime - Ngày cập nhật
+
+}
+entity quyetDinhXuPhatCCV {
+  *quyetDinhXuPhatId: int - Id quyết định xử phạt, tự động tăng
+  createdAt: datetime - Ngày tạo
+  updatedAt: datetime      - Ngày cập nhật
+}
+entity Nguoi {
+  soGiayTo: int <<PK>> - Số CMND/Căn cước/CCCD 
+  hoVaTen: string - Họ và tên công chứng viên
+  ngaySinh: datetime - Ngày tháng năm sinh
+  gioiTinh: int - Nam là 1, Nữ là 2
+  createdAt: datetime - Ngày tạo
+  updatedAt: datetime      - Ngày cập nhật
+}
+entity ToChucCongChung {
+  *toChucCongChungId: int - Id tổ chức công chứng, tự động tăng
+  createdAt: datetime - Ngày tạo
+  updatedAt: datetime      - Ngày cập nhật
+}
+
+entity ChuKySo {
+  *chuKySoId: int - Id thông tin đăng ký chữ ký số, tự động tăng
+  createdAt: datetime - Ngày tạo
+  updatedAt: datetime      - Ngày cập nhật
+
+}
+entity LichSuCapNhatThongtinChuKySo {
+  *lichSuCapNhatCKSId: int - Id bản ghi lịch sử cập nhật, tự động tăng
+  createdAt: datetime - Ngày tạo
+  updatedAt: datetime      - Ngày cập nhật
+
+}
+
+entity LichSuHanhNghe {
+  *lichSuHanhNgheId: int - Id bản ghi lịch sử hành nghề, tự động tăng
+  toChucCongChungId: int
+  congChungVienId: int
+
+  createdAt: datetime - Ngày tạo
+  updatedAt: datetime      - Ngày cập nhật
+}
+entity LichSuCapNhatThongtinCCV {
+  *lichSuCapNhatCCVId: int - Id bản ghi lịch sử cập nhật, tự động tăng
+  createdAt: datetime - Ngày tạo
+  updatedAt: datetime      - Ngày cập nhật
+
+}
+
+entity LichSuCapNhatThongtinChungChi {
+  *lichSuCapNhatChungChiId: int - Id bản ghi lịch sử cập nhật, tự động tăng
+  createdAt: datetime - Ngày tạo
+  updatedAt: datetime      - Ngày cập nhật
+}
+entity quyetDinhXuPhatCCV {
+  *quyetDinhXuPhatId: int - Id bản ghi lịch sử cập nhật, tự động tăng
+  createdAt: datetime - Ngày tạo
+  updatedAt: datetime      - Ngày cập nhật
+}
+entity thongTinBoNhiemMienNhiemCCV {
+  *thongTinId: int - Id bản ghi lịch sử cập nhật, tự động tăng
+  createdAt: datetime - Ngày tạo
+  updatedAt: datetime      - Ngày cập nhật
+}
+entity GiaoDich {
+  *giaoDichId: int - Id giao dịch, tự động tăng
+  createdAt: datetime - Ngày tạo
+  updatedAt: datetime      - Ngày cập nhật
+
+}
+@enduml

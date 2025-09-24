@@ -1,0 +1,94 @@
+@startuml
+!pragma layout smetana
+left to right direction
+
+'==================== Actors ====================
+actor "Chuyên viên STP" as CVSTP
+actor "Lãnh đạo Sở Tư pháp, Lãnh đạo Phòng HCBTTP tại Sở Tư pháp" as Teacher
+actor "Lãnh đạo Sở Tư pháp, Lãnh đạo Phòng HCBTTP tại Sở Tư pháp" as Teacher
+
+actor "Sinh viên" as Student
+
+'==================== CỘT TRÁI: Quản trị ====================
+
+
+package "Quản lý công chứng viên" as P_TeacherMgmt {
+  usecase "Xem danh sách giảng viên" as UC_T_List
+  usecase "Xem chi tiết thông tin giảng viên" as UC_T_Detail
+  usecase "Thêm mới thông tin giảng viên" as UC_T_Create
+  usecase "Chỉnh sửa thông tin giảng viên" as UC_T_Update
+  usecase "Xóa thông tin giảng viên" as UC_T_Delete
+  usecase "Tìm kiếm thông tin giảng viên" as UC_T_Search
+}
+
+package "Quản lý thông tin chứng chỉ hành nghề công chứng viên" as P_StudentMgmt {
+  usecase "Xem danh sách sinh viên" as UC_S_List
+  usecase "Xem chi tiết thông tin sinh viên" as UC_S_Detail
+  usecase "Thêm mới thông tin sinh viên" as UC_S_Create
+  usecase "Chỉnh sửa thông tin sinh viên" as UC_S_Update
+  usecase "Xóa thông tin sinh viên" as UC_S_Delete
+  usecase "Tìm kiếm thông tin sinh viên" as UC_S_Search
+}
+
+package "Tra cứu thông tin công chứng viên" as P_ClassMgmt {
+  usecase "Xem danh sách lớp học" as UC_C_List
+  usecase "Xem chi tiết thông tin lớp học" as UC_C_Detail
+  usecase "Thêm mới thông tin lớp học" as UC_C_Create
+  usecase "Chỉnh sửa thông tin lớp học" as UC_C_Update
+  usecase "Xóa thông tin lớp học" as UC_C_Delete
+  usecase "Phân công sinh viên vào lớp học" as UC_S_Assign
+  usecase "Phân công giảng viên vào lớp học" as UC_C_Assign
+  usecase "Tìm kiếm lớp học" as UC_C_Search
+
+}
+
+package "Quản lý thông tin chữ ký số" as P_ClassMgmt {
+  usecase "Xem danh sách lớp học" as UC_C_List
+  usecase "Xem chi tiết thông tin lớp học" as UC_C_Detail
+  usecase "Thêm mới thông tin lớp học" as UC_C_Create
+  usecase "Chỉnh sửa thông tin lớp học" as UC_C_Update
+  usecase "Xóa thông tin lớp học" as UC_C_Delete
+  usecase "Phân công sinh viên vào lớp học" as UC_S_Assign
+  usecase "Phân công giảng viên vào lớp học" as UC_C_Assign
+  usecase "Tìm kiếm lớp học" as UC_C_Search
+
+}
+
+'==================== Liên kết Actor → UC ====================
+Admin -- UC_T_List
+Admin -- UC_T_Detail
+Admin -- UC_T_Create
+Admin -- UC_T_Update
+Admin -- UC_T_Delete
+Admin -- UC_T_Search
+
+Admin -- UC_S_List
+Admin -- UC_S_Detail
+Admin -- UC_S_Create
+Admin -- UC_S_Update
+Admin -- UC_S_Delete
+Admin -- UC_S_Search
+
+Admin -- UC_C_List
+Admin -- UC_C_Detail
+Admin -- UC_C_Create
+Admin -- UC_C_Update
+Admin -- UC_C_Delete
+Admin -- UC_S_Assign
+Admin -- UC_C_Assign
+
+UC_C_List -- Teacher
+UC_C_Detail -- Teacher
+UC_S_List -- Teacher
+UC_S_Detail -- Teacher
+UC_C_Search -- Teacher
+UC_S_Search -- Teacher
+
+Student -- UC_C_List
+Student -- UC_C_Detail
+Student -- UC_T_List
+Student -- UC_T_Detail
+Student -- UC_T_Search
+Student -- UC_C_Search
+
+@enduml

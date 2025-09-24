@@ -9,6 +9,9 @@ entity TaiSanGiaoDich
 
 entity GiaoDich {
   * giaoDichId: int    - Mã giao dịch, tự động tăng
+  * loaiGiaoDich: int    - Loại giao dịch
+  * tenGiaoDich: int    - Tên giao dịch
+  * loaiTaiSan: int    - Loại tài sản 
   * createdAt: datetime - Ngày tạo
   * updatedAt: datetime      - Ngày cập nhật
 
