@@ -1,0 +1,32 @@
+@startuml AD_CCV_Detail
+!pragma layout smetana
+title Activity Diagram: Xóa công chứng viên
+
+start
+:Người dùng truy cập thành công màn hình danh sách công chứng viên\n(**SCR_CCV_List**);
+if (Có quyền xóa?) then (có)
+:Hệ thống hiển thị nút xóa trên mỗi dòng thông tin;
+:Người dùng bấm nút xóa;
+:Hệ thống hiển thị popup yêu cầu xác nhận xóa;
+if (Người dùng xác nhận?) then (Có)
+  :Người dùng bấm nút "Xác nhận";
+  :Hệ thống kiểm tra ràng buộc hồ sơ công chứng;
+  if (Công chứng viên có hồ sơ đang hiệu lực?) then (Có)
+    :Hiển thị cảnh báo lỗi "Không thể xóa công chứng viên đang có hồ sơ công chứng còn hiệu lực\n(**SCR_CCV_DeleteC**);
+    stop
+  else (Không)
+    :Xóa dữ liệu công chứng viên khỏi \n(**ENT_CongChungVien**);
+    :Hệ thống ghi lại lịch sử cập nhật thông tin \n(**ENT_LichSuCapNhatThongtin**);
+    :Đóng popup xác nhận và cập nhật lại danh sách công chứng viên\n(**SCR_CCV_List**);
+    :Hiển thị thông báo "Xóa thành công thông tin công chứng viên";
+    stop
+  endif
+else (Không)
+  :Người dùng hủy thao tác bằng cách bấm vào nút "Hủy" hoặc biểu tượng đóng popup;
+  :Hệ thống đóng popup;
+  stop
+endif
+else (Không)
+:Hệ thống không hiển thị nút xóa công chứng viên;
+stop
+@enduml

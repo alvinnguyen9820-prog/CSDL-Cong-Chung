@@ -1,0 +1,35 @@
+@startuml AD_CCV_Detail
+!pragma layout smetana
+title Activity Diagram: Xem chi tiết thông tin công chứng viên
+
+start
+:Người dùng truy cập thành công màn hình danh sách công chứng viên;
+:Người dùng lựa chọn xem chi tiết 1 công chứng viên;
+:Kiểm tra quyền truy cập;
+if (Có quyền?) then (Yes)
+  :Truy vấn dữ liệu công chứng viên theo ID \n(**ENT_CongChungVien**);
+  if (Có dữ liệu?) then (Yes)
+    :Hiển thị thông tin chi tiết công chứng viên \n(**SCR_CCV_Detail**);
+    stop
+  else (No)
+    :Hiển thị "Không có dữ liệu công chứng viên";
+  endif
+  :Kiểm tra quyền xem chứng chỉ;
+  if (Có quyền xem chứng chỉ ?) then (yes)
+  :Truy vấn dữ liệu danh sách chứng chỉ hành nghề của công chứng viên theo congChungVienId \n(**ENT_ChungChiHanhNghe**);
+    if (Có dữ liệu?) then (Yes)
+      :Hiển thị danh sách chứng chỉ hành nghề công chứng viên \n(**SCR_CCV_Detail**);
+      stop
+    else (No)
+      :Hiển thị "Không có dữ liệu chứng chỉ hành nghề";
+      stop
+    endif  
+  else (No)
+    :Không hiển thị danh sách chứng chỉ hành nghề;
+    stop
+  endif
+else (No)
+  :Thông báo lỗi "Không có quyền truy cập";
+  stop
+endif
+@enduml

@@ -8,7 +8,7 @@ start
   :Chọn thao tác;
   switch (Thao tác?)
     case (Lưu)
-      :Kiểm tra tính hợp lệ dữ liệu;
+      :Kiểm tra tính hợp lệ dữ liệu \n(**UC_CCV_CheckData**);
       if (Hợp lệ?) then (Đúng)
         :Ghi nhận dữ liệu công chứng viên;
           if (Ghi thành công?) then (Có)
@@ -19,7 +19,7 @@ start
             :Ở lại màn hình màn hình\n(**SCR_CCV_Create**);
           endif
       else (Sai)
-        :Thông báo lỗi "Nhập đầy đủ trường thông tin bắt buộc"";
+        :Thông báo lỗi => Mô tả trong \n(**UC_CCV_CheckData**);
         :Ở lại màn hình\n(**SCR_CCV_create**);
       endif
     case (Đóng)

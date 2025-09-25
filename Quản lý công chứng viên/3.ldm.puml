@@ -31,7 +31,7 @@ entity Nguoi {
 }
 
 entity CongChungVien {
-  *congChungVienId: int <<PK>> - Id công chứng viên, tự động 
+  *congChungVienId: int <<PK>> - Id công chứng viên, tự động tăng
   nguoiId: int <<Fk>> - ID tham chiếu tới bảng người
   anhCongChungVien: string - Link ảnh công chứng viên
   soDienThoai: string - Số điện thoại của công chứng viên

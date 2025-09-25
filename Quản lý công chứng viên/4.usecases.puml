@@ -146,17 +146,11 @@ UC_Search_CCV_Platform -- LeaderBTP
 UC_Search_CCV_Software -- LeaderBTP
 
 ' Công chứng viên tại TCHNCC
-CCV -- UC_Sign_List
-CCV -- UC_Sign_Detail
-CCV -- UC_Sign_Search
-CCV -- UC_Sign_Create
-CCV -- UC_Sign_Update
-CCV -- UC_Sign_Delete
-CCV -- UC_Sign_Submit
-CCV -- UC_Sign_History
+Staff <|-- CCV
+UC_Sign_History -- CCV
+UC_Sign_Export -- CCV
+UC_Sign_Stats -- CCV
 
-CCV -- UC_Search_CCV
-CCV -- UC_Search_Cert
 
 ' Nhân viên tại TCHNCC
 UC_Sign_List -- Staff

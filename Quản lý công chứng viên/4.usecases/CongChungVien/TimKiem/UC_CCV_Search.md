@@ -29,7 +29,7 @@
 3. Người dùng lọc tiêu chí tìm kiếm
 4. Người dùng bấm nút "Tìm kiếm"
 5. Hệ thống truy vấn thông tin công chứng viên
-    - Truy vấn họ và tên công chứng viên gần giống với kết quả đã điền
+    - Truy vấn họ và tên công chứng viên gần giống với kết quả đã điền/Trong tên có thông tin đã điền
     - Truy vấn chính xác số thẻ công chứng viên
     - Truy vấn chính xác theo trạng thái đã chọn
     - Truy vấn chính xác theo tỉnh thành của tổ chức công chứng đã chọn
