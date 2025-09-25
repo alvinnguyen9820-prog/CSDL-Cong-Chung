@@ -1,0 +1,22 @@
+@startuml AD_Sign_Delete
+!include _colors.puml
+
+title Hoạt động: Xóa đăng ký chữ ký số
+
+start
+:Người dùng chọn "Xóa" trên hồ sơ (trạng thái = Nháp hoặc cho phép);
+(**SCR_Sign_List**) #LightGreen
+
+:Hiển thị popup xác nhận;
+(**SCR_Confirm**) #LightGreen
+
+if (Người dùng xác nhận?) then (Yes)
+  :Xóa bản ghi ChuKySo (soft-delete hoặc hard-delete theo policy);
+  :Thông báo "Xóa thành công";
+  (**SCR_Sign_List**) #LightGreen
+  stop
+else (No)
+  :Hủy thao tác;
+  stop
+endif
+@enduml

@@ -1,0 +1,21 @@
+@startuml AD_Sign_Create
+title Hoạt động: Đăng ký chữ ký số
+
+start
+:Người dùng chọn "Đăng ký chữ ký số";
+
+:Hiển thị form đăng ký;
+
+:Người dùng nhập thông tin chữ ký số;
+:Người dùng bấm "Lưu";
+
+if (Dữ liệu hợp lệ?) then (Yes)
+  :Lưu thông tin vào DB (ChuKySo) trạng thái = "Nháp";
+  :Thông báo "Đăng ký thành công";
+  stop
+else (No)
+  :Hiển thị thông báo lỗi (VD: thiếu thông tin, ngày không hợp lệ, file sai định dạng);
+  :Người dùng sửa lại hoặc hủy thao tác;
+  stop
+endif
+@enduml

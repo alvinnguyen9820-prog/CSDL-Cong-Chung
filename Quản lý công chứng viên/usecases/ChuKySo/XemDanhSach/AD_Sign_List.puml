@@ -1,0 +1,26 @@
+@startuml AD_Sign_List
+!include _colors.puml
+
+title Hoạt động: Xem danh sách đăng ký chữ ký số
+
+start
+:Người dùng mở "Danh sách đăng ký chữ ký số";
+(**SCR_Sign_List**) #LightGreen
+
+:Kiểm tra quyền truy cập;
+if (Có quyền?) then (Yes)
+  :Truy vấn danh sách ChuKySo từ DB (với filter/paging);
+  if (Có dữ liệu?) then (Yes)
+    :Hiển thị danh sách;
+    (**SCR_Sign_List**) #LightGreen
+    :Người dùng thao tác (Xem/ Sửa/ Xóa/ Gửi duyệt/ Export);
+    stop
+  else (No)
+    :Hiển thị "Không tìm thấy dữ liệu";
+    stop
+  endif
+else (No)
+  :Hiển thị lỗi "Không có quyền";
+  stop
+endif
+@enduml

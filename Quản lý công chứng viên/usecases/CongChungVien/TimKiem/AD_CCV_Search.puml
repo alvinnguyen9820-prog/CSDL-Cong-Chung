@@ -1,0 +1,23 @@
+@startuml AD_CCV_Detail
+!pragma layout smetana
+title Activity Diagram: Tìm kiếm công chứng viên
+
+start
+:Người dùng truy cập màn hình danh sách công chứng viên;
+if (Có quyền?) then (Yes)
+  :Người dùng điền thông tin tìm kiếm;
+  :Người dùng lọc các điều kiện tìm kiếm;
+  :Người dùng bấm nút tìm kiếm;
+  :Truy vấn dữ liệu công chứng viên theo thông tin và điều kiện tìm kiếm;
+  if (Có dữ liệu?) then (Yes)
+    :Hiển thị danh sách công chứng viên theo thông tin và điều kiện tìm kiếm \n(**SCR_CCV_List**);
+    stop
+  else (No)
+    :Hiển thị "Không có dữ liệu công chứng viên";
+    stop
+  endif
+else (No)
+  :Không hiển thị thanh tìm kiếm;
+  stop
+endif
+@enduml

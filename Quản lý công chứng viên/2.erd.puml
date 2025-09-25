@@ -1,27 +1,17 @@
 @startuml erd
 !pragma layout smetana
 left to right direction
-entity GiaoDich 
-entity CongChungVien 
-entity ToChucCongChung
-entity ChuKySo
 entity Nguoi
+entity CongChungVien
+entity ChungChiHanhNghe
+entity ChuKySo
+entity LichSuCapNhatThongtin
+entity ToChucCongChung
 
-entity LichSuHanhNghe
-entity LichSuCapNhatThongtinCCV
-entity LichSuCapNhatThongtinChungChi
-entity LichSuCapNhatThongtinChuKySo
-
-CongChungVien ||..{ GiaoDich
 CongChungVien ||..|| Nguoi
-ToChucCongChung ||..{ GiaoDich
-LichSuHanhNghe }..|| CongChungVien
-LichSuHanhNghe }..|| ToChucCongChung
-LichSuCapNhatThongtinCCV }..|| CongChungVien
-LichSuCapNhatThongtinChungChi }..|| CongChungVien
-ChuKySo }..|| CongChungVien
-LichSuCapNhatThongtinChuKySo }..|| ChuKySo
-
+CongChungVien ||..{ ChungChiHanhNghe
+CongChungVien ||..o{ ChuKySo
+ToChucCongChung ||..{ CongChungVien
 @enduml
 
 

@@ -1,0 +1,18 @@
+@startuml AD_CCV_Update
+title Activity Diagram: Chỉnh sửa công chứng viên
+
+start
+:Người dùng chọn "Chỉnh sửa" từ danh sách công chứng viên;
+:Hiển thị form chỉnh sửa với dữ liệu hiện tại;
+:Người dùng cập nhật thông tin công chứng viên;
+:Người dùng bấm "Lưu";
+if (Dữ liệu hợp lệ?) then (Yes)
+  :Cập nhật dữ liệu vào DB (Nguoi, CongChungVien);
+  :Thông báo "Cập nhật thành công";
+  stop
+else (No)
+  :Hiển thị thông báo lỗi (VD: thiếu thông tin, trùng số thẻ...);
+  :Người dùng sửa lại hoặc hủy thao tác;
+  stop
+endif
+@enduml

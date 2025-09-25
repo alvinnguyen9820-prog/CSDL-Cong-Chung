@@ -1,0 +1,35 @@
+@startuml AD_CCVManager_Create
+!pragma layout smetana
+title Activity Diagram: Thêm mới công chứng viên
+start
+:Truy cập chức năng "Thêm mới công chứng viên";
+:Hiển thị form nhập thông tin;
+:Nhập thông tin công chứng viên;
+  :Chọn thao tác;
+  switch (Thao tác?)
+    case (Lưu)
+      :Kiểm tra tính hợp lệ dữ liệu;
+      if (Hợp lệ?) then (Đúng)
+        :Ghi nhận dữ liệu công chứng viên;
+          if (Ghi thành công?) then (Có)
+            :Thông báo "Thêm mới công chứng viên thành công";
+            :Chuyển hướng về danh sách\n(**SCR_CCV_List**);
+          else (Không)
+            :Thông báo lỗi hệ thống;
+            :Ở lại màn hình màn hình\n(**SCR_CCV_Create**);
+          endif
+      else (Sai)
+        :Thông báo lỗi "Nhập đầy đủ trường thông tin bắt buộc"";
+        :Ở lại màn hình\n(**SCR_CCV_create**);
+      endif
+    case (Đóng)
+      :Xác nhận hủy thao tác?;
+      if (Đồng ý?) then (Có)
+        :Hủy thao tác;
+        :Chuyển hướng về danh sách\n(**SCR_CCV_List**);
+      else (Không)
+        :Ở lại màn hình\n(**SCR_CCV_Create**);
+      endif
+  endswitch
+  stop
+@enduml

@@ -4,91 +4,171 @@ left to right direction
 
 '==================== Actors ====================
 actor "Chuyên viên STP" as CVSTP
-actor "Lãnh đạo Sở Tư pháp, Lãnh đạo Phòng HCBTTP tại Sở Tư pháp" as Teacher
-actor "Lãnh đạo Sở Tư pháp, Lãnh đạo Phòng HCBTTP tại Sở Tư pháp" as Teacher
+actor "Lãnh đạo Sở Tư pháp, Lãnh đạo Phòng HCBTTP tại Sở Tư pháp" as LeaderSTP
+actor "Lãnh đạo Bộ Tư pháp, Lãnh đạo Cục BTTP, Chuyên viên Cục BTTP" as LeaderBTP
+actor "Công chứng viên tại TCHNCC" as CCV
+actor "Nhân viên tại TCHNCC" as Staff
 
-actor "Sinh viên" as Student
-
-'==================== CỘT TRÁI: Quản trị ====================
-
-
-package "Quản lý công chứng viên" as P_TeacherMgmt {
-  usecase "Xem danh sách giảng viên" as UC_T_List
-  usecase "Xem chi tiết thông tin giảng viên" as UC_T_Detail
-  usecase "Thêm mới thông tin giảng viên" as UC_T_Create
-  usecase "Chỉnh sửa thông tin giảng viên" as UC_T_Update
-  usecase "Xóa thông tin giảng viên" as UC_T_Delete
-  usecase "Tìm kiếm thông tin giảng viên" as UC_T_Search
+'==================== Quản lý công chứng viên ====================
+package "Quản lý công chứng viên" as P_CCVMgmt {
+    usecase "Xem danh sách công chứng viên" as UC_CCV_List
+    usecase "Xem chi tiết công chứng viên" as UC_CCV_Detail
+    usecase "Thêm mới công chứng viên" as UC_CCV_Create
+    usecase "Chỉnh sửa công chứng viên" as UC_CCV_Update
+    usecase "Xóa công chứng viên" as UC_CCV_Delete
+    usecase "Tìm kiếm công chứng viên" as UC_CCV_Search
+    usecase "Xuất danh sách công chứng viên" as UC_CCV_Export
+    usecase "Xem lịch sử cập nhật công chứng viên" as UC_CCV_History
 }
 
-package "Quản lý thông tin chứng chỉ hành nghề công chứng viên" as P_StudentMgmt {
-  usecase "Xem danh sách sinh viên" as UC_S_List
-  usecase "Xem chi tiết thông tin sinh viên" as UC_S_Detail
-  usecase "Thêm mới thông tin sinh viên" as UC_S_Create
-  usecase "Chỉnh sửa thông tin sinh viên" as UC_S_Update
-  usecase "Xóa thông tin sinh viên" as UC_S_Delete
-  usecase "Tìm kiếm thông tin sinh viên" as UC_S_Search
+'==================== Quản lý chứng chỉ hành nghề ====================
+package "Quản lý chứng chỉ hành nghề" as P_CertMgmt {
+    usecase "Xem lịch sử cập nhật chứng chỉ hành nghề" as UC_Cert_History
+    usecase "Xem chi tiết chứng chỉ hành nghề" as UC_Cert_Detail
+    usecase "Thống kê chứng chỉ hành nghề" as UC_Cert_Stats
+    usecase "Thống kê bổ nhiệm chứng chỉ hành nghề" as UC_Cert_Appointment
+    usecase "Thống kê miễn nhiệm/thu hồi chứng chỉ hành nghề" as UC_Cert_Revocation
 }
 
-package "Tra cứu thông tin công chứng viên" as P_ClassMgmt {
-  usecase "Xem danh sách lớp học" as UC_C_List
-  usecase "Xem chi tiết thông tin lớp học" as UC_C_Detail
-  usecase "Thêm mới thông tin lớp học" as UC_C_Create
-  usecase "Chỉnh sửa thông tin lớp học" as UC_C_Update
-  usecase "Xóa thông tin lớp học" as UC_C_Delete
-  usecase "Phân công sinh viên vào lớp học" as UC_S_Assign
-  usecase "Phân công giảng viên vào lớp học" as UC_C_Assign
-  usecase "Tìm kiếm lớp học" as UC_C_Search
-
+'==================== Quản lý chữ ký số ====================
+package "Quản lý chữ ký số" as P_DigitalSign {
+    usecase "Xem danh sách đăng ký chữ ký số" as UC_Sign_List
+    usecase "Xem chi tiết đăng ký chữ ký số" as UC_Sign_Detail
+    usecase "Tìm kiếm đăng ký chữ ký số" as UC_Sign_Search
+    usecase "Đăng ký chữ ký số" as UC_Sign_Create
+    usecase "Sửa đăng ký chữ ký số" as UC_Sign_Update
+    usecase "Xóa đăng ký chữ ký số" as UC_Sign_Delete
+    usecase "Duyệt đăng ký chữ ký số" as UC_Sign_Approve
+    usecase "Từ chối phê duyệt đăng ký chữ ký số" as UC_Sign_Reject
+    usecase "Gửi duyệt đăng ký chữ ký số" as UC_Sign_Submit
+    usecase "Xem lịch sử đăng ký chữ ký số" as UC_Sign_History
+    usecase "Thống kê đăng ký chữ ký số" as UC_Sign_Stats
+    usecase "Xuất thống kê đăng ký chữ ký số" as UC_Sign_Export
 }
 
-package "Quản lý thông tin chữ ký số" as P_ClassMgmt {
-  usecase "Xem danh sách lớp học" as UC_C_List
-  usecase "Xem chi tiết thông tin lớp học" as UC_C_Detail
-  usecase "Thêm mới thông tin lớp học" as UC_C_Create
-  usecase "Chỉnh sửa thông tin lớp học" as UC_C_Update
-  usecase "Xóa thông tin lớp học" as UC_C_Delete
-  usecase "Phân công sinh viên vào lớp học" as UC_S_Assign
-  usecase "Phân công giảng viên vào lớp học" as UC_C_Assign
-  usecase "Tìm kiếm lớp học" as UC_C_Search
-
+'==================== Tra cứu thông tin công chứng viên ====================
+package "Tra cứu thông tin công chứng viên" as P_Search {
+    usecase "Tra cứu công chứng viên toàn quốc" as UC_Search_CCV
+    usecase "Tra cứu chứng chỉ hành nghề toàn quốc" as UC_Search_Cert
+    usecase "Xem tổng hợp danh sách công chứng viên" as UC_Search_CCV_Summary
+    usecase "Xem báo cáo biến động công chứng viên" as UC_Search_CCV_Change
+    usecase "Xem báo cáo theo giới tính, độ tuổi, thâm niên" as UC_Search_CCV_Demographics
+    usecase "Xem báo cáo chia sẻ thông tin từ Nền tảng công chứng điện tử" as UC_Search_CCV_Platform
+    usecase "Xem báo cáo chia sẻ thông tin từ phần mềm quản lý BTTP" as UC_Search_CCV_Software
 }
 
 '==================== Liên kết Actor → UC ====================
-Admin -- UC_T_List
-Admin -- UC_T_Detail
-Admin -- UC_T_Create
-Admin -- UC_T_Update
-Admin -- UC_T_Delete
-Admin -- UC_T_Search
+' Chuyên viên STP
+CVSTP -- UC_CCV_List
+CVSTP -- UC_CCV_Detail
+CVSTP -- UC_CCV_Create
+CVSTP -- UC_CCV_Update
+CVSTP -- UC_CCV_Delete
+CVSTP -- UC_CCV_Search
+CVSTP -- UC_CCV_Export
+CVSTP -- UC_CCV_History
 
-Admin -- UC_S_List
-Admin -- UC_S_Detail
-Admin -- UC_S_Create
-Admin -- UC_S_Update
-Admin -- UC_S_Delete
-Admin -- UC_S_Search
+CVSTP -- UC_Cert_History
+CVSTP -- UC_Cert_Detail
 
-Admin -- UC_C_List
-Admin -- UC_C_Detail
-Admin -- UC_C_Create
-Admin -- UC_C_Update
-Admin -- UC_C_Delete
-Admin -- UC_S_Assign
-Admin -- UC_C_Assign
+CVSTP -- UC_Sign_List
+CVSTP -- UC_Sign_Detail
+CVSTP -- UC_Sign_Search
+CVSTP -- UC_Sign_Approve
+CVSTP -- UC_Sign_Reject
+CVSTP -- UC_Sign_History
+CVSTP -- UC_Sign_Stats
+CVSTP -- UC_Sign_Export
 
-UC_C_List -- Teacher
-UC_C_Detail -- Teacher
-UC_S_List -- Teacher
-UC_S_Detail -- Teacher
-UC_C_Search -- Teacher
-UC_S_Search -- Teacher
+CVSTP -- UC_Search_CCV
+CVSTP -- UC_Search_Cert
+CVSTP -- UC_Search_CCV_Summary
+CVSTP -- UC_Search_CCV_Change
+CVSTP -- UC_Search_CCV_Demographics
+CVSTP -- UC_Search_CCV_Platform
+CVSTP -- UC_Search_CCV_Software
 
-Student -- UC_C_List
-Student -- UC_C_Detail
-Student -- UC_T_List
-Student -- UC_T_Detail
-Student -- UC_T_Search
-Student -- UC_C_Search
+' Lãnh đạo Sở Tư pháp / Phòng HCBTTP
+LeaderSTP -- UC_CCV_List
+LeaderSTP -- UC_CCV_Detail
+LeaderSTP -- UC_CCV_Search
+LeaderSTP -- UC_CCV_Export
+LeaderSTP -- UC_CCV_History
+
+LeaderSTP -- UC_Cert_History
+LeaderSTP -- UC_Cert_Detail
+LeaderSTP -- UC_Cert_Stats
+LeaderSTP -- UC_Cert_Appointment
+LeaderSTP -- UC_Cert_Revocation
+
+LeaderSTP -- UC_Sign_List
+LeaderSTP -- UC_Sign_Detail
+LeaderSTP -- UC_Sign_Search
+LeaderSTP -- UC_Sign_Approve
+LeaderSTP -- UC_Sign_History
+LeaderSTP -- UC_Sign_Stats
+LeaderSTP -- UC_Sign_Export
+
+LeaderSTP -- UC_Search_CCV
+LeaderSTP -- UC_Search_Cert
+LeaderSTP -- UC_Search_CCV_Summary
+LeaderSTP -- UC_Search_CCV_Change
+LeaderSTP -- UC_Search_CCV_Demographics
+LeaderSTP -- UC_Search_CCV_Platform
+LeaderSTP -- UC_Search_CCV_Software
+
+' Lãnh đạo Bộ Tư pháp / Cục BTTP / Chuyên viên Cục BTTP
+UC_CCV_List -- LeaderBTP
+UC_CCV_Detail -- LeaderBTP
+UC_CCV_Search -- LeaderBTP
+UC_CCV_Export -- LeaderBTP
+UC_CCV_History -- LeaderBTP
+
+UC_Cert_History -- LeaderBTP
+UC_Cert_Detail -- LeaderBTP
+UC_Cert_Stats -- LeaderBTP
+UC_Cert_Appointment -- LeaderBTP
+UC_Cert_Revocation -- LeaderBTP
+
+UC_Sign_List -- LeaderBTP
+UC_Sign_Detail -- LeaderBTP
+UC_Sign_Search -- LeaderBTP
+UC_Sign_History -- LeaderBTP
+UC_Sign_Stats -- LeaderBTP
+UC_Sign_Export -- LeaderBTP
+
+UC_Search_CCV -- LeaderBTP
+UC_Search_Cert -- LeaderBTP
+UC_Search_CCV_Summary -- LeaderBTP
+UC_Search_CCV_Change -- LeaderBTP
+UC_Search_CCV_Demographics -- LeaderBTP
+UC_Search_CCV_Platform -- LeaderBTP
+UC_Search_CCV_Software -- LeaderBTP
+
+' Công chứng viên tại TCHNCC
+CCV -- UC_Sign_List
+CCV -- UC_Sign_Detail
+CCV -- UC_Sign_Search
+CCV -- UC_Sign_Create
+CCV -- UC_Sign_Update
+CCV -- UC_Sign_Delete
+CCV -- UC_Sign_Submit
+CCV -- UC_Sign_History
+
+CCV -- UC_Search_CCV
+CCV -- UC_Search_Cert
+
+' Nhân viên tại TCHNCC
+UC_Sign_List -- Staff
+UC_Sign_Detail -- Staff
+UC_Sign_Search -- Staff
+UC_Sign_Create -- Staff
+UC_Sign_Update -- Staff
+UC_Sign_Delete -- Staff
+UC_Sign_Submit -- Staff
+
+UC_Search_CCV -- Staff
+UC_Search_Cert -- Staff
+
 
 @enduml

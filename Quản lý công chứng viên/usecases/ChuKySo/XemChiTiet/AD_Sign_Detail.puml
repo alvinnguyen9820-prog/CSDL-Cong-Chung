@@ -1,0 +1,20 @@
+@startuml AD_Sign_Detail
+!include _colors.puml
+
+title Hoạt động: Xem chi tiết đăng ký chữ ký số
+
+start
+:Người dùng chọn 1 hồ sơ từ danh sách;
+(**SCR_Sign_List**) #LightGreen
+
+:Truy vấn chi tiết ChuKySo theo ID;
+if (Có dữ liệu?) then (Yes)
+  :Hiển thị màn hình chi tiết;
+  (**SCR_Sign_Detail**) #LightGreen
+  :Người dùng thực hiện thao tác (Download file / Export / Gửi duyệt ...);
+  stop
+else (No)
+  :Hiển thị "Không tìm thấy hồ sơ";
+  stop
+endif
+@enduml
