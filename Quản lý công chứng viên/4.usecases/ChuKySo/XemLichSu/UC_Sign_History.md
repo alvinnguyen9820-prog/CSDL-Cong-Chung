@@ -1,0 +1,56 @@
+# Use Case: Xem lịch sử cập nhật thông tin đăng ký chữ ký số
+
+## User Story
+- Là Chuyên viên STP, Lãnh đạo STP, Lãnh đạo phòng HCBTTP tại STP, Lãnh đạo Bộ Tư pháp, Lãnh đạo Cục BTTP, Chuyên viên Cục BTTP, tôi muốn xem được lịch sử cập nhật thông tin đăng ký chữ ký số của công chứng viên để có thể truy vết và xem các thay đổi của thông tin
+
+## Acceptance criteria
+- Hệ thống hiển thị lịch sử cập nhật dưới dạng danh sách
+- Các trường thông tin trong danh sách bao gồm: 
+    - STT
+    - ID bản ghi
+    - Thời gian
+    - Người thực hiện
+    - Thao tác
+    - Trường thay đổi
+    - Giá trị cũ
+    - Giá trị mới
+- Người dùng có thể quay lại trang danh sách thông tin đăng ký chữ ký số
+- Nếu không tìm thấy dữ liệu, hệ thống hiển thị thông báo "Không tìm thấy lịch sử cập nhật thông tin đăng ký chữ ký số".
+- Nếu có lỗi hệ thống, hiển thị thông báo lỗi.  
+
+## Tác nhân chính
+- Chuyên viên STP, Lãnh đạo STP, Lãnh đạo phòng HCBTTP tại STP, Lãnh đạo Bộ Tư pháp, Lãnh đạo Cục BTTP, Chuyên viên Cục BTTP
+
+## Tiền điều kiện
+- Người dùng đăng nhập hệ thống.
+- Người dùng có quyền xem lịch sử cập nhật thông tin đăng ký chữ ký số
+
+## Luồng chính
+1. Người dùng truy cập thành công màn hình danh sách thông tin đăng ký chữ ký số (**SCR_Sign_List**)
+2. Người dùng truy cập trang lịch sử cập nhật thông tin đăng ký chữ ký số băng cách click vào biểu tượng xem lịch sử cập nhật 1 thông tin đăng ký chữ ký số trong danh sách
+3. Hệ thống truy vấn lịch sử cập nhật thông tin đăng ký chữ ký số theo ID (**ENT_LichSuCapNhatChuKySo**).
+4. Hệ thống hiển thị popup lịch sử cập nhật thông tin đăng ký chữ ký số (**SCR_CKS_History**) bao gồm các thông tin
+    - STT
+    - ID bản ghi
+    - Thời gian
+    - Người thực hiện
+    - Thao tác
+    - Trường thay đổi
+    - Giá trị cũ
+    - Giá trị mới
+5. Hệ thống hiển thị các nút chức năng.
+- Biểu tượng quay lại và nút đóng => Bấm vào đóng popup, chuyển về màn hình danh sách thông tin đăng ký chữ ký số (**SCR_CKS_List**)
+6. Kết thúc Use case
+
+## Luồng phụ / ngoại lệ
+- Không có dữ liệu: Hiển thị "Không tìm thấy lịch sử cập nhật thông tin đăng ký chữ ký số".
+- Lỗi hệ thống: Hiển thị thông báo "Không tải được thông tin, vui lòng thử lại".
+
+## Hậu điều kiện
+- Nếu thành công: Người dùng xem được lịch sử cập nhật thông tin đăng ký chữ ký số.
+- Nếu thất bại: Không hiển thị dữ liệu, hoặc hiển thị thông báo lỗi.
+
+## Liên kết
+- Activity Diagram: [AD_CKS_History.puml]
+- Form/Screen: [SCR_CKS_History.md]
+- Entity liên quan: ENT_LichSuCapNhatChuKySo

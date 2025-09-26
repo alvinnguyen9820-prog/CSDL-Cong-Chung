@@ -1,0 +1,19 @@
+@startuml AD_CCVManager_Create
+!pragma layout smetana
+title Activity Diagram: Kiểm tra tính hợp lệ dữ liệu công chứng viên
+start
+:Người dùng lưu thông tin công chứng viên;
+:Hệ thống kiểm tra tính hợp lệ;
+  if (Thông tin bắt buộc == null hoặc Thông tin sai định dạng) then (Đúng)
+  :Thông báo lỗi "Thông tin không hợp lệ";
+  stop
+  else (Sai)
+    if (Ngày Sinh/Ngày cấp giấy tờ > Ngày hôm nay || Ngày Sinh/Ngày cấp giấy tờ == null) then (Đúng)
+    :Thông báo lỗi "Thông tin không hợp lệ";
+    stop
+    else (Sai)
+    :Tiếp tục luồng chính;
+    stop
+    endif
+  endif
+@enduml

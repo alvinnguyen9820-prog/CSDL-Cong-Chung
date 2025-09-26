@@ -44,8 +44,9 @@ entity CongChungVien {
   updatedAt: datetime - Ngày cập nhật
 
 }
+
 entity ChungChiHanhNghe {
-  chungChiId: int <<PK>> - UUID
+  *chungChiId: int <<PK>> - UUID
   congChungVienId: int <<Fk>> - ID công chứng viên
   loaiChungChi: string - Loại chứng chỉ
   soChungChi: string - Số chứng chỉ
@@ -65,7 +66,7 @@ entity ChuKySo {
   ngayHieuLuc: date - Ngày hiệu lực
   ngayKetThuc: date - Ngày hết hạn
   nhaCungCap: string - Tên nhà cung cấp
-  trangThai: string - Trạng thái chứng thư số
+  trangThai: string - Trạng thái phê duyệt thông tin đăng ký chữ ký số
   thoiGianGui: datetime - Thời gian gửi thông tin
   nguoiGui: string - Người gửi thông tin
   thoiGianDuyet: datetime - Thời gian duyệt

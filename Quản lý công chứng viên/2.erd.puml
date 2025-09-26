@@ -5,13 +5,16 @@ entity Nguoi
 entity CongChungVien
 entity ChungChiHanhNghe
 entity ChuKySo
-entity LichSuCapNhatThongtin
+entity LichSuCapNhatThongTin
+entity LichSuCapNhatChuKySo
 entity ToChucCongChung
 
 CongChungVien ||..|| Nguoi
 CongChungVien ||..{ ChungChiHanhNghe
 CongChungVien ||..o{ ChuKySo
 ToChucCongChung ||..{ CongChungVien
+ChuKySo ||..{ LichSuCapNhatChuKySo
+CongChungVien ||..{ LichSuCapNhatThongTin
 @enduml
 
 

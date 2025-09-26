@@ -2,17 +2,35 @@
 title Activity Diagram: Chỉnh sửa công chứng viên
 
 start
-:Người dùng chọn "Chỉnh sửa" từ danh sách công chứng viên;
+:Người dùng chọn "Chỉnh sửa" từ danh sách công chứng viên hoặc từ màn hình chi tiết công chứng viên;
 :Hiển thị form chỉnh sửa với dữ liệu hiện tại;
 :Người dùng cập nhật thông tin công chứng viên;
 :Người dùng bấm "Lưu";
-if (Dữ liệu hợp lệ?) then (Yes)
-  :Cập nhật dữ liệu vào DB (Nguoi, CongChungVien);
-  :Thông báo "Cập nhật thành công";
+:Chọn thao tác;
+  switch (Thao tác?)
+    case (Lưu)
+      :Kiểm tra tính hợp lệ dữ liệu \n(**UC_CCV_CheckData**);
+      if (Hợp lệ?) then (Đúng)
+        :Ghi nhận dữ liệu công chứng viên;
+          if (Ghi thành công?) then (Có)
+            :Thông báo "Cập nhật thông tin công chứng viên thành công";
+            :Chuyển hướng về danh sách\n(**SCR_CCV_List**);
+          else (Không)
+            :Thông báo lỗi hệ thống;
+            :Ở lại màn hình màn hình\n(**SCR_CCV_Update**);
+          endif
+      else (Sai)
+        :Thông báo lỗi => Mô tả trong \n(**UC_CCV_CheckData**);
+        :Ở lại màn hình\n(**SCR_CCV_Update**);
+      endif
+    case (Đóng)
+      :Xác nhận hủy thao tác?;
+      if (Đồng ý?) then (Có)
+        :Hủy thao tác;
+        :Chuyển hướng về danh sách\n(**SCR_CCV_List**);
+      else (Không)
+        :Ở lại màn hình\n(**SCR_CCV_Update**);
+      endif
+  endswitch
   stop
-else (No)
-  :Hiển thị thông báo lỗi (VD: thiếu thông tin, trùng số thẻ...);
-  :Người dùng sửa lại hoặc hủy thao tác;
-  stop
-endif
 @enduml
