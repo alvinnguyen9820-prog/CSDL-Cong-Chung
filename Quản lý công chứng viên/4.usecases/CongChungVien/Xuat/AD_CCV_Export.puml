@@ -1,0 +1,16 @@
+@startuml AD_CCV_Export
+!pragma layout smetana
+title Activity Diagram: Xuất danh sách công chứng viên
+
+start
+:Người dùng truy cập thành công màn hình danh sách công chứng viên;
+:Bấm nút xuất danh sách;
+if (Có quyền?) then (Yes)
+  :Xuất danh sách công chứng viên theo kết quả đã tìm kiếm;
+  :Tải xuống file excel danh sách công chứng viên;
+endif
+else (No)
+  :Thông báo lỗi "Không có quyền truy cập";
+  stop
+endif
+@enduml

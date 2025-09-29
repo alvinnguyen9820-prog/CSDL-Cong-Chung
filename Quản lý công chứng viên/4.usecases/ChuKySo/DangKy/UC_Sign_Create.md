@@ -6,13 +6,14 @@
 ## Acceptance Criteria
 - Hệ thống hiển thị form đăng ký chữ ký số.
 - Người dùng nhập thông tin: 
-   - Công chứng viên
-   - Gói đăng ký
+   - Công chứng viên (Nếu loại chữ ký số là cá nhân)
+   - Loại chữ ký số (Cá nhân/Tổ chức)
    - Nhà cung cấp
    - Mã chứng thư
    - Ngày hiệu lực
    - Ngày hết hạn 
    - File đính kèm
+   - Ghi chú
 - Hệ thống kiểm tra dữ liệu hợp lệ (thời gian hiệu lực/hết hạn, file đúng định dạng).
 - Nếu hợp lệ: lưu hồ sơ đăng ký ở trạng thái **"Mới tạo"** hoặc **"Chờ duyệt"**.
 - Hiển thị thông báo "Đăng ký thành công".

@@ -7,12 +7,12 @@
 - Hệ thống hiển thị form tìm kiếm với các tiêu chí
     - Ô điền thông tin tìm kiếm theo "Họ và tên công chứng viên", "Số thẻ CCV", "Mã chứng thư"
     - Bộ lọc:
-        - Trạng thái đăng ký
+        - Trạng thái
         - Nhà cung cấp dịch vụ
         Đối với người dùng có thể xem toàn bộ danh sách
         - Tỉnh/Thành phố của tổ chức hành nghề công chứng
         - Tên tổ chức hành nghề công chứng
-- Hiển thị bảng danh sách Thông tin đăng ký chữ ký số với các cột tông tin cơ bản (STT, Họ và tên công chứng viên, số thẻ, tổ chức công chứng đang hành nghề, Mã chứng thư, Nhà cung cấp dịch vụ, Trạng thái đăng ký) theo tiêu chí đã tìm kiếm.
+- Hiển thị bảng danh sách Thông tin đăng ký chữ ký số với các cột tông tin cơ bản (STT Tên tổ chức công chứng, Mã chứng thư, Nhà cung cấp dịch vụ, Trạng thái, Loại) theo tiêu chí đã tìm kiếm.
 - Nếu số lượng bản ghi vượt quá giới hạn hiển thị, hệ thống phải cung cấp phân trang (10 bản ghi 1 trang).
 - Nếu có lỗi tải dữ liệu, hiển thị thông báo lỗi.
 - Nếu không tìm thấy dữ liệu theo tiêu chí tìm kiếm, thông báo "Không tìm thấy dữ liệu Thông tin đăng ký chữ ký số"
@@ -31,8 +31,8 @@
 3. Người dùng lọc tiêu chí tìm kiếm
 4. Người dùng bấm nút "Tìm kiếm"
 5. Hệ thống truy vấn thông tin Thông tin đăng ký chữ ký số
-    - Truy vấn họ và tên công chứng viên gần giống với kết quả đã điền/Trong tên có thông tin đã điền
-    - Truy vấn chính xác số thẻ Thông tin đăng ký chữ ký số
+    - Truy vấn họ và tên công chứng viên gần giống với kết quả đã điền
+    - Truy vấn chính xác số thẻ công chứng viên
     - Truy vấn chính xác mã chứng thư đã điền
     - Truy vấn chính xác theo trạng thái đăng ký đã chọn
     - Truy vấn chính xác theo nhà cung cấp dịch vụ đã chọn

@@ -11,6 +11,12 @@ start
     if (Ngày Sinh/Ngày cấp giấy tờ > Ngày hôm nay || Ngày Sinh/Ngày cấp giấy tờ == null) then (Đúng)
     :Thông báo lỗi "Thông tin không hợp lệ";
     stop
+    else if (Trùng số thẻ) then (Đúng)
+    :Thông báo lỗi "Số thẻ đã tồn tại";
+    stop
+    else if (Trùng số CMND/CCCD/Hộ chiếu) then (Đúng)
+    :Thông báo lỗi "Số CMND/CCCD/Hộ chiếu đã tồn tại";
+    stop
     else (Sai)
     :Tiếp tục luồng chính;
     stop

@@ -20,7 +20,10 @@
 2. Hệ thống thực hiện kiểm tra tính hợp lệ của dữ liệu
 3. Nếu thông tin đúng định dạng (mô tả trong **SCR_CCV_Create**) và các thông tin bắt buộc không bị trống, hệ thống tiếp tục kiểm tra logic. Nếu không thì hiển thị thông báo lỗi: "Thông tin không hợp lệ"
 4. Nếu ngày cấp giấy tờ hoặc ngày sinh lớn hơn ngày hiện tại, hệ thống thông báo lỗi "Thông tin không hợp lệ". Nếu không tiếp tục luồng hiện tại
-6. Kết thúc use case.
+5. Nếu số thẻ bị trùng với công chứng viên khác trong hệ thống, hệ thống thông báo lỗi "Số thẻ đã tồn tại". Nếu không tiếp tục luồng hiện tại
+6. Nếu số giấy tờ cá nhân bị trùng với công chứng viên khác trong hệ thống, hệ thống thông báo lỗi "Số CCCD/CMND/Hộ chiếu đã tồn tại". Nếu không tiếp tục luồng hiện tại
+7. Nếu ngày cấp giấy tờ hoặc ngày sinh lớn hơn ngày hiện tại, hệ thống thông báo lỗi "Thông tin không hợp lệ". Nếu không tiếp tục luồng hiện tại
+8. Kết thúc use case.
 
 ## Luồng phụ / Ngoại lệ
 - Lỗi hệ thống: Hiển thị thông báo lỗi, không lưu dữ liệu.

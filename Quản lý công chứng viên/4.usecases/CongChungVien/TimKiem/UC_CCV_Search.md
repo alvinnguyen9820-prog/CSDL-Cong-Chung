@@ -1,7 +1,7 @@
-# Use Case: Xem danh sách công chứng viên
+# Use Case: Tìm kiếm công chứng viên
 
 ## User Story
-- Là Chuyên viên STP, Lãnh đạo STP, Lãnh đạo phòng HCBTTP tại STP, Lãnh đạo Bộ Tư pháp, Lãnh đạo Cục BTTP, Chuyên viên Cục BTTP, tôi muốn tìm kiếm theo nhiều tiêu chí, để có thể nhanh chóng tra cứu ra thông tin công chứng viên
+- Là Chuyên viên STP, Lãnh đạo STP, Lãnh đạo phòng HCBTTP tại STP, Lãnh đạo Bộ Tư pháp, Lãnh đạo Cục BTTP, Chuyên viên Cục BTTP, tôi muốn tìm kiếm theo nhiều tiêu chí, để có thể nhanh chóng tìm ra thông tin công chứng viên trong danh sách quản ly
 
 ## Acceptance criteria
 - Hệ thống hiển thị form tìm kiếm với các tiêu chí
@@ -50,5 +50,5 @@
 
 ## Liên kết
 - Activity Diagram: [AD_CCV_Search.puml]
-- Form/Screen: [SCR_CCV_Search.md]
+- Form/Screen: [SCR_CCV_List.md]
 - Entity liên quan: ENT_CongChungVien, ENT_ToChucCongChung

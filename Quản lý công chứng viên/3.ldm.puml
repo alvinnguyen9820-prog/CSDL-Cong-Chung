@@ -5,14 +5,13 @@ left to right direction
 entity Nguoi
 entity CongChungVien
 entity ChungChiHanhNghe
-entity LichSuChungChi
-entity ThongTinBoNhiemMienNhiem
+entity LichSuCapNhatChuKySo
 entity ChuKySo
-entity LichSuCapNhatThongtin
+entity LichSuCapNhatChungChi
+entity LichSuCapNhatCCV
 
 entity Nguoi {
   nguoiId: int <<PK>> - ID bản ghi, tự động tăng
-  loaiGiayTo: string - Loại giấy tờ
   soGiayTo: string - Số CMND/Căn cước/CCCD 
   ngayCap: date - Ngày cấp
   noiCap: string - Nơi cấp
@@ -21,9 +20,10 @@ entity Nguoi {
   gioiTinh: int - Nam là 1, Nữ là 2
   quocTich: string - Quốc tịch
   danToc: string - Dân tộc
+  diaChi: string - Địa chỉ
   tinhThanhPho: int - Mã tỉnh thành phố từ 1/7
   phuongXa: int - Mã phường xã từ 1/7
-  diaChi: string - Địa chỉ
+  diaChiCu: string - Địa chỉ
   tinhThanhPhoCu: int - Mã tỉnh thành phố trước 1/7
   phuongXaCu: int - Mã phường xã cũ trước 1/7
   createdAt: datetime - Ngày tạo
@@ -48,7 +48,6 @@ entity CongChungVien {
 entity ChungChiHanhNghe {
   *chungChiId: int <<PK>> - UUID
   congChungVienId: int <<Fk>> - ID công chứng viên
-  loaiChungChi: string - Loại chứng chỉ
   soChungChi: string - Số chứng chỉ
   ngayCap: date - Ngày cấp
   ngayHieuLuc: date - Ngày hiệu lực
@@ -61,8 +60,8 @@ entity ChungChiHanhNghe {
 entity ChuKySo {
   *chuKySoId: int <<PK>> - Id thông tin đăng ký chữ ký số, tự động tăng
   congChungVienId: int <<Fk>> - Id công chứng viên
-  maChungThu: string - Mã serial của chứng thư
-  goiDangKy: string - Tên gói chứng thư
+  soSerial: string - Số serial
+  loaiChuKySo: string - Loại chữ ký số cá nhân/tổ chức
   ngayHieuLuc: date - Ngày hiệu lực
   ngayKetThuc: date - Ngày hết hạn
   nhaCungCap: string - Tên nhà cung cấp
@@ -76,9 +75,28 @@ entity ChuKySo {
   updatedAt: datetime      - Ngày cập nhật
 }
 
-entity LichSuCapNhatThongtin {
+entity LichSuCapNhatCCV {
   *lichSuCapNhatId: int <<PK>> - Id bản ghi lịch sử cập nhật, tự động tăng
-  doiTuong: string - Đối tượng cập nhật VD Chữ ký số, Công chứng viên,...
+  truongThongtinCapNhat: string - Trường thông tin cập nhật
+  truongThongTinId: string - Mã trường thông tin cập nhật
+  thayDoi: string - Thông tin thay đổi
+  createdAt: datetime - Ngày tạo
+  updatedAt: datetime      - Ngày cập nhật
+  createdBy: string - Người tạo
+  updatedBy: string - Người cập nhật
+}
+entity LichSuCapNhatChuKySo {
+  *lichSuCapNhatId: int <<PK>> - Id bản ghi lịch sử cập nhật, tự động tăng
+  truongThongtinCapNhat: string - Trường thông tin cập nhật
+  truongThongTinId: string - Mã trường thông tin cập nhật
+  thayDoi: string - Thông tin thay đổi
+  createdAt: datetime - Ngày tạo
+  updatedAt: datetime      - Ngày cập nhật
+  createdBy: string - Người tạo
+  updatedBy: string - Người cập nhật
+}
+entity LichSuCapNhatChungChi {
+  *lichSuCapNhatId: int <<PK>> - Id bản ghi lịch sử cập nhật, tự động tăng
   truongThongtinCapNhat: string - Trường thông tin cập nhật
   truongThongTinId: string - Mã trường thông tin cập nhật
   thayDoi: string - Thông tin thay đổi

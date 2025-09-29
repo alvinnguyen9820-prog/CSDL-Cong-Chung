@@ -24,8 +24,7 @@
     - Địa chỉ tổ chức công chứng đang hành nghề
     - Số thẻ Công chứng viên
     - Địa chỉ 
-    - Ngày cấp thẻ
-    - Danh sách chứng chỉ của công chứng viên (Nếu có quyền xem)
+    - Thông tin chứng chỉ của công chứng viên (Nếu có quyền xem)
 - Người dùng có thể quay lại danh sách công chứng viên.
 - Nếu không tìm thấy dữ liệu, hệ thống hiển thị thông báo "Không tìm thấy thông tin công chứng viên".
 - Nếu có lỗi hệ thống, hiển thị thông báo lỗi.  
@@ -57,20 +56,24 @@
         - Phường/xã thường trú (cũ)
         - Tỉnh/Thành phố thường trú (mới)
         - Phường/xã thường trú (mới)
-        - Trạng thái
-    - Thông tin hành nghề (**ENT_CongChungVien** và **ENT_ToChucCongChung**)
+    - Thông tin tổ chức hành nghề công chứng hiện tại (**ENT_CongChungVien** và **ENT_ToChucCongChung**)
         - Tên tổ chức công chứng đang hành nghề
         - Địa chỉ tổ chức công chứng đang hành nghề
         - Số thẻ Công chứng viên
-        - Ngày cấp thẻ
-    - Danh sách chứng chỉ của công chứng viên (Nếu có quyền xem) (**ENT_ChungChiHanhNghe**)
-        - STT
-        - Số chứng chỉ
         - Trạng thái
+    - Thông tin chứng chỉ hành nghề của công chứng viên (Nếu có quyền xem) (**ENT_ChungChiHanhNghe**)
+        - Số chứng chỉ
+        - Ngày cấp
+        - Nơi cấp
+        - Ngày hiệu lực
+        - Ngày hết hạn
+        - Đơn vị cấp
+        - Trạng thái
+        - File đính kèm
 5. Hệ thống hiển thị các nút chức năng.
 - Biểu tượng quay lại và nút đóng => Bấm vào chuyển về màn hình danh sách công chứng viên (**SCR_CCV_List**)
 - Chỉnh sửa => Mô tả trong use case chỉnh sửa thông tin công chứng viên (**UC_CCV_Update**) và màn hình (**SCR_CCV_Detail**)
-6. Người dùng có thể xem chi tiết chứng chỉ hành nghề (Mô tả trong **UC_ChungChi_Detail**)
+6. Người dùng có thể xem lịch sử cập nhật chứng chỉ hành nghề (Mô tả trong **UC_ChungChi_History**)
 7. Kết thúc Use case
 
 ## Luồng phụ / ngoại lệ

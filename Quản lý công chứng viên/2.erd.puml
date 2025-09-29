@@ -5,16 +5,19 @@ entity Nguoi
 entity CongChungVien
 entity ChungChiHanhNghe
 entity ChuKySo
-entity LichSuCapNhatThongTin
+entity LichSuCapNhatCCV
 entity LichSuCapNhatChuKySo
+entity LichSuCapNhatChungChi
 entity ToChucCongChung
 
 CongChungVien ||..|| Nguoi
-CongChungVien ||..{ ChungChiHanhNghe
 CongChungVien ||..o{ ChuKySo
+CongChungVien ||..|| ChungChiHanhNghe
 ToChucCongChung ||..{ CongChungVien
 ChuKySo ||..{ LichSuCapNhatChuKySo
-CongChungVien ||..{ LichSuCapNhatThongTin
+CongChungVien ||..{ LichSuCapNhatCCV
+ChungChiHanhNghe ||..{ LichSuCapNhatChungChi
+
 @enduml
 
 
