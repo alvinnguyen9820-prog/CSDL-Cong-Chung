@@ -1,0 +1,36 @@
+@startuml AD_Org_Update
+title Activity Diagram: Chỉnh sửa tổ chức công chứng
+
+start
+:Người dùng chọn "Chỉnh sửa" từ danh sách tổ chức công chứng hoặc từ màn hình chi tiết tổ chức công chứng;
+:Hiển thị form chỉnh sửa với dữ liệu hiện tại;
+:Người dùng cập nhật thông tin tổ chức công chứng;
+:Người dùng bấm "Lưu";
+:Chọn thao tác;
+  switch (Thao tác?)
+    case (Lưu)
+      :Kiểm tra tính hợp lệ dữ liệu \n(**UC_Org_CheckData**);
+      if (Hợp lệ?) then (Đúng)
+        :Ghi nhận dữ liệu tổ chức công chứng;
+          if (Ghi thành công?) then (Có)
+            :Thông báo "Cập nhật thông tin tổ chức công chứng thành công";
+            :Chuyển hướng về danh sách\n(**SCR_Org_List**);
+          else (Không)
+            :Thông báo lỗi hệ thống;
+            :Ở lại màn hình màn hình\n(**SCR_Org_Update**);
+          endif
+      else (Sai)
+        :Thông báo lỗi => Mô tả trong \n(**UC_Org_CheckData**);
+        :Ở lại màn hình\n(**SCR_Org_Update**);
+      endif
+    case (Đóng)
+      :Xác nhận hủy thao tác?;
+      if (Đồng ý?) then (Có)
+        :Hủy thao tác;
+        :Chuyển hướng về danh sách\n(**SCR_Org_List**);
+      else (Không)
+        :Ở lại màn hình\n(**SCR_Org_Update**);
+      endif
+  endswitch
+  stop
+@enduml

@@ -39,7 +39,7 @@
 ## Luồng phụ / ngoại lệ
 - Nếu có lỗi tải danh sách: hiển thị thông báo "Không tải được danh sách, vui lòng thử lại".
 - Nếu không có dữ liệu: hiển thị "Không có dữ liệu Tổ chức công chứng".
-- Nếu không quyền truy cập: hiển thị "Không có quyền truy cập" và ẩn đi menu "Danh sách Tổ chức công chứng".
+- Nếu không quyền truy cập: hiển thị "Không có quyền truy cập" và ẩn đi menu "Quản lý tổ chức công chứng".
 
 ## Hậu điều kiện
 - Nếu thành công: Người dùng xem được danh sách Tổ chức công chứng.

@@ -2,7 +2,6 @@
 !pragma layout smetana
 left to right direction
 
-entity Nguoi
 entity CongChungVien
 entity ChungChiHanhNghe
 entity LichSuCapNhatChuKySo
@@ -10,8 +9,8 @@ entity ChuKySo
 entity LichSuCapNhatChungChi
 entity LichSuCapNhatCCV
 
-entity Nguoi {
-  nguoiId: int <<PK>> - ID bản ghi, tự động tăng
+entity CongChungVien {
+  *congChungVienId: int <<PK>> - Id công chứng viên, tự động tăng
   soGiayTo: string - Số CMND/Căn cước/CCCD 
   ngayCap: date - Ngày cấp
   noiCap: string - Nơi cấp
@@ -26,13 +25,6 @@ entity Nguoi {
   diaChiCu: string - Địa chỉ
   tinhThanhPhoCu: int - Mã tỉnh thành phố trước 1/7
   phuongXaCu: int - Mã phường xã cũ trước 1/7
-  createdAt: datetime - Ngày tạo
-  updatedAt: datetime      - Ngày cập nhật
-}
-
-entity CongChungVien {
-  *congChungVienId: int <<PK>> - Id công chứng viên, tự động tăng
-  nguoiId: int <<Fk>> - ID tham chiếu tới bảng người
   anhCongChungVien: string - Link ảnh công chứng viên
   soDienThoai: string - Số điện thoại của công chứng viên
   email: string - Email công chứng viên
@@ -60,7 +52,7 @@ entity ChungChiHanhNghe {
 entity ChuKySo {
   *chuKySoId: int <<PK>> - Id thông tin đăng ký chữ ký số, tự động tăng
   congChungVienId: int <<Fk>> - Id công chứng viên
-  toChucCongChungId: int <<FK>> - ID tổ chức công chưng
+  toChucCongChungId: int <<FK>> - ID tổ chức công chứng
   soSerial: string - Số serial
   loaiChuKySo: string - Loại chữ ký số cá nhân/tổ chức
   ngayHieuLuc: date - Ngày hiệu lực

@@ -1,7 +1,6 @@
 @startuml erd
 !pragma layout smetana
 left to right direction
-entity Nguoi
 entity CongChungVien
 entity ChungChiHanhNghe
 entity ChuKySo
@@ -10,7 +9,6 @@ entity LichSuCapNhatChuKySo
 entity LichSuCapNhatChungChi
 entity ToChucCongChung
 
-CongChungVien ||..|| Nguoi
 CongChungVien ||..o{ ChuKySo
 CongChungVien ||..|| ChungChiHanhNghe
 ToChucCongChung ||..{ CongChungVien

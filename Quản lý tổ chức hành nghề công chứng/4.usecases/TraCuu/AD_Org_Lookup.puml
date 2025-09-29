@@ -1,0 +1,24 @@
+@startuml AD_Org_Lookup
+!pragma layout smetana
+title Activity Diagram: Tra cứu thông tin tổ chức công chứng 
+
+start
+:Người dùng truy cập màn hình tra cứu thông tin tổ chức công chứng ;
+if (Có quyền?) then (Yes)
+  :Hiển thị màn hình tra cứu \n(**SCR_Org_Lookup**)
+  :Người dùng điền thông tin tra cứu;
+  :Người dùng lọc các điều kiện tra cứu;
+  :Người dùng bấm nút tra cứu;
+  :Truy vấn dữ liệu tổ chức công chứng theo thông tin và điều kiện tra cứu;
+  if (Có dữ liệu?) then (Yes)
+    :Hiển thị danh sách tổ chức công chứng theo thông tin và điều kiện tra cứu \n(**SCR_Org_Lookup**);
+    stop
+  else (No)
+    :Hiển thị "Không có dữ liệu tổ chức công chứng";
+    stop
+  endif
+else (No)
+  :Không hiển thị màn hình tra cứu;
+  stop
+endif
+@enduml
