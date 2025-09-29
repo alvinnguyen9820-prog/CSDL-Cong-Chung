@@ -1,0 +1,41 @@
+@startuml ldm
+!pragma layout smetana
+left to right direction
+
+entity CongChungVien
+entity ToChucHanhNgheCongChung
+entity ChuKySo
+entity LichSuCapNhatTCHNCC
+
+entity LichSuCapNhatTCHNCC {
+  *lichSuCapNhatId: int <<PK>> - Id bản ghi lịch sử cập nhật, tự động tăng
+  truongThongtinCapNhat: string - Trường thông tin cập nhật
+  truongThongTinId: string - Mã trường thông tin cập nhật
+  thayDoi: string - Thông tin thay đổi
+  createdAt: datetime - Ngày tạo
+  updatedAt: datetime      - Ngày cập nhật
+  createdBy: string - Người tạo
+  updatedBy: string - Người cập nhật
+}
+
+entity ToChucHanhNgheCongChung {
+  *toChucHanhNgheCongChungId: int <<PK>> ID bản ghi, tự động tăng
+  tenToChucHanhNgheCongChung: string - Tên tổ chức hành nghề công chứng
+  maSoThue: string - Mã số thuế
+  soTuPhap: string - Sở Tư pháp quản lý tổ chức công chứng
+  diaChi: string - Địa chỉ trụ sở
+  tinhThanhPho: string - Địa chỉ tỉnh/thành phố của tổ chức công chứng
+  phuongXa: string - Địa chỉ phường/Xã của tổ chức công chứng
+  soDienThoai: string - Số điện thoại tổ chức công chứng
+  email: string - Email tổ chức công chứng
+  truognVanPhongId: int - ID công chứng viên là trưởng văn phòng công chứng
+  trangThai: string - Trạng thái hoạt động của tổ chức Đang hoạt động, Chờ thành lập, 
+  Giải thể, Chấm dứt hoạt động, Chưa hoạt động, Thu hồi QĐ cho phép thành lập, 
+  Chờ cấp Giấy ĐKHĐ, Từ chối cấp Giấy ĐKHĐ, Đã hợp nhất, Đã thành lập, 
+  Từ chối thành lập, Tạm ngưng hoạt động, 
+  Thu hồi Giấy ĐKHĐ, Thay đổi nội dung ĐKHĐ, Đã chuyển đổi, Đã sáp nhập
+  createdAt: datetime - ngày tạo
+  updatedAt: datetime - ngày cập nhật
+}
+
+@enduml

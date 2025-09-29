@@ -1,0 +1,20 @@
+@startuml AD_CCV_List
+!pragma layout smetana
+title Activity Diagram: Xem danh sách tổ chức hành nghề công chứng
+
+start
+:Người dùng truy cập màn hình danh sách tổ chức hành nghề công chứng;
+:Kiểm tra quyền truy cập;
+if (Có quyền?) then (Yes)
+  if (Người dùng cấp Bộ) then (yes)
+    :Tải toàn bộ danh sách tổ chức hành nghề công chứng;
+  else (Người dùng cấp Sở)
+    :Tải danh sách tổ chức hành nghề công chứng thuộc Sở Tư pháp tương ứng;
+  endif
+else (No)
+  :Thông báo lỗi "Không có quyền truy cập";
+endif
+stop
+
+@enduml
+

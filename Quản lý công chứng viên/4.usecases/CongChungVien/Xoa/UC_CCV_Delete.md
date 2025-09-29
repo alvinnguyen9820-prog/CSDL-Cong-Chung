@@ -1,4 +1,4 @@
-# Use Case: Xem danh sách công chứng viên
+# Use Case: Xóa công chứng viên
 
 ## User Story
 - Là Chuyên viên STP, tôi muốn xóa được một hoặc nhiều công chứng viên, để có thể loại bỏ những bản ghi đã bị tạo nhầm.

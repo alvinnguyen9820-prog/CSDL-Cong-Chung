@@ -60,6 +60,7 @@ entity ChungChiHanhNghe {
 entity ChuKySo {
   *chuKySoId: int <<PK>> - Id thông tin đăng ký chữ ký số, tự động tăng
   congChungVienId: int <<Fk>> - Id công chứng viên
+  toChucCongChungId: int <<FK>> - ID tổ chức công chưng
   soSerial: string - Số serial
   loaiChuKySo: string - Loại chữ ký số cá nhân/tổ chức
   ngayHieuLuc: date - Ngày hiệu lực

@@ -1,0 +1,82 @@
+@startuml
+!pragma layout smetana
+left to right direction
+
+'==================== Actors ====================
+actor "Chuyên viên tại Sở Tư pháp" as CV_STP
+actor "Lãnh đạo Sở Tư pháp\nLãnh đạo Phòng HCBTTP tại Sở TP" as Leader_STP
+actor "Lãnh đạo Bộ Tư pháp\nLãnh đạo Cục BTTP\nChuyên viên Cục BTTP" as Leader_BTP
+actor "Công chứng viên tại các TCHNCC" as CCV
+actor "Nhân viên tại TCHNCC" as Staff
+
+'==================== Quản lý tổ chức công chứng ====================
+package "Quản lý tổ chức hành nghề công chứng" as P_OrgMgmt {
+    usecase "Xem danh sách tổ chức hành nghề\ntrên địa bàn Tỉnh/Thành phố" as UC_Org_List
+    usecase "Xem chi tiết tổ chức hành nghề\ntrên địa bàn Tỉnh/Thành phố" as UC_Org_Detail
+    usecase "Thêm mới tổ chức hành nghề\ntrên địa bàn Tỉnh/Thành phố" as UC_Org_Create
+    usecase "Chỉnh sửa thông tin tổ chức\nhành nghề trên địa bàn Tỉnh/Thành phố" as UC_Org_Update
+    usecase "Xóa tổ chức hành nghề\ntrên địa bàn Tỉnh/Thành phố" as UC_Org_Delete
+    usecase "Tìm kiếm thông tin tổ chức\nhành nghề trên địa bàn Tỉnh/Thành phố" as UC_Org_Search
+    usecase "Xuất danh sách tổ chức hành nghề\ntrên địa bàn Tỉnh/Thành phố" as UC_Org_Export
+    usecase "Xem lịch sử cập nhật thông tin\nTCHNCC trên địa bàn Tỉnh/Thành phố" as UC_Org_History
+}
+
+'==================== Tra cứu & báo cáo tổ chức ====================
+package "Tra cứu & báo cáo tổ chức" as P_OrgSearch {
+    usecase "Tra cứu TCHNCC trên phạm vi toàn quốc" as UC_Search_Org_National
+    usecase "Tra cứu TCHNCC theo tỉnh/thành" as UC_Search_Org_Province
+    usecase "Xem tổng hợp danh sách TCHNCC" as UC_Search_Org_Summary
+    usecase "Xem báo cáo biến động TCHNCC" as UC_Search_Org_Change
+    usecase "Xem báo cáo chia sẻ từ Nền tảng công chứng điện tử" as UC_Search_Org_Platform
+    usecase "Xem báo cáo chia sẻ từ phần mềm quản lý BTTP" as UC_Search_Org_BTP
+}
+
+
+'==================== Liên kết Actor → UC ====================
+' Chuyên viên tại Sở Tư pháp
+CV_STP -- UC_Org_List
+CV_STP -- UC_Org_Detail
+CV_STP -- UC_Org_Create
+CV_STP -- UC_Org_Update
+CV_STP -- UC_Org_Delete
+CV_STP -- UC_Org_Search
+CV_STP -- UC_Org_Export
+CV_STP -- UC_Org_History
+
+' Lãnh đạo Sở Tư pháp / Phòng HCBTTP
+Leader_STP -- UC_Org_List
+Leader_STP -- UC_Org_Detail
+Leader_STP -- UC_Org_Search
+Leader_STP -- UC_Org_Export
+Leader_STP -- UC_Org_History
+
+Leader_STP -- UC_Search_Org_National
+Leader_STP -- UC_Search_Org_Province
+Leader_STP -- UC_Search_Org_Summary
+Leader_STP -- UC_Search_Org_Change
+Leader_STP -- UC_Search_Org_Platform
+Leader_STP -- UC_Search_Org_BTP
+
+' Lãnh đạo Bộ Tư pháp / Cục BTTP / Chuyên viên Cục BTTP
+UC_Org_List -- Leader_BTP
+UC_Org_Detail -- Leader_BTP
+UC_Org_Search -- Leader_BTP
+UC_Org_Export -- Leader_BTP
+UC_Org_History -- Leader_BTP
+
+UC_Search_Org_National -- Leader_BTP
+UC_Search_Org_Province -- Leader_BTP
+UC_Search_Org_Summary -- Leader_BTP
+UC_Search_Org_Change -- Leader_BTP
+UC_Search_Org_Platform -- Leader_BTP
+UC_Search_Org_BTP -- Leader_BTP
+
+' Công chứng viên tại các TCHNCC
+UC_Search_Org_National -- CCV
+UC_Search_Org_Province -- CCV
+
+' Nhân viên tại TCHNCC
+UC_Search_Org_Province -- Staff
+UC_Search_Org_National -- Staff
+
+@enduml

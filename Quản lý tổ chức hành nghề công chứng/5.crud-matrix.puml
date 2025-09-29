@@ -1,0 +1,8 @@
+@startuml CRUD_Matrix
+note as CRUD_Matrix
+| Entity / Use Case                                              | UC_Org_List | UC_Org_Detail | UC_Org_Create | UC_Org_Update | UC_Org_Delete | UC_Org_Search | UC_Org_Export | UC_Org_History | UC_Search_Org_National | UC_Search_Org_Province | UC_Search_Org_Summary | UC_Search_Org_Change | UC_Search_Org_Platform | UC_Search_Org_BTP |
+| :------------------------------------------------------------- | :---------: | :-----------: | :-----------: | :-----------: | :-----------: | :-----------: | :-----------: | :------------: | :--------------------: | :--------------------: | :-------------------: | :------------------: | :--------------------: | :---------------: |
+| ToChucCongChung (TCHNCC)                                       |     R       |      R        |      C        |      U        |      D        |      R        |      R        |       R        |           R            |           R            |          R            |         R            |           R            |        R          |
+| LichSuCapNhatTCHNCC (History of TCHNCC)                        |     -       |      -        |      -        |      -        |      -        |      -        |      -        |       R        |           -            |           -            |          -            |         -            |           -            |        -          |
+end note
+@enduml
