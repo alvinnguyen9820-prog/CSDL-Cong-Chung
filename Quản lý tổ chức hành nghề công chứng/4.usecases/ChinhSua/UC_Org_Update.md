@@ -28,7 +28,7 @@
    - Quay lại danh sách tổ chức công chứng (**UC_Org_List**).
 6. Kết thúc use case.
 
-## Luồng phụ / Ngoại lệ
+## Luồng phụ / Ngoại lệ 
 - Người dùng chọn **Hủy**: Form đóng, không lưu dữ liệu.
 - Lỗi hệ thống: Hiển thị thông báo lỗi, không lưu dữ liệu.
 - Lỗi dữ liệu: Hiển thị thông báo lỗi (**UC_Org_CheckData**)

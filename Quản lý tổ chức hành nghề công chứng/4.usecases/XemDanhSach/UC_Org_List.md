@@ -23,9 +23,11 @@
 
 ## Luồng chính
 1. Người dùng truy cập màn hình danh sách Tổ chức công chứng.
-2. Hệ thống hiển thị màn hình danh sách Tổ chức công chứng theo thứ tự thời gian cập nhật từ mới tới cũ nhất (lấy dữ liệu từ ENT_ToChucCongChung).
-3. Nếu số lượng bản ghi lớn hơn 10, hệ thống thực hiện phân trang, 10 bản ghi mỗi trang
-4. Người dùng có thể:
+2. Nếu người dùng thuộc cấp Bộ, hệ thống tải toàn bộ danh sách Tổ chức công chứng
+3. Nếu người dùng thuộc cấp Sở, hệ thống tải danh sách tổ chức công chứng thuộc Sở Tư pháp của người dùng
+4. Hệ thống hiển thị màn hình danh sách Tổ chức công chứng theo thứ tự thời gian cập nhật từ mới tới cũ nhất (lấy dữ liệu từ ENT_ToChucCongChung).
+5. Nếu số lượng bản ghi lớn hơn 10, hệ thống thực hiện phân trang, 10 bản ghi mỗi trang
+6. Người dùng có thể:
    - Chọn trang tiếp theo/ trước, hệ thống sẽ hiển thị 10 bản ghi của trang tương ứng
    - Export (UC_Org_Export)
    - Tìm kiếm (UC_Org_Search)
@@ -34,7 +36,7 @@
    - Xóa (UC_Org_Delete)
    - Chỉnh sửa (UC_Org_Update)
    - Xem lịch sử cập nhật thông tin (UC_Org_History)
-5. Kết thúc.
+7. Kết thúc.
 
 ## Luồng phụ / ngoại lệ
 - Nếu có lỗi tải danh sách: hiển thị thông báo "Không tải được danh sách, vui lòng thử lại".

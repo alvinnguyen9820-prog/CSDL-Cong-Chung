@@ -1,12 +1,12 @@
 # Use Case: UC_Org_Create (Thêm mới tổ chức công chứng)
 
 ## User Story
-- Với vai trò là **Chuyên viên STP**, tôi muốn có thể thêm mới tổ chức công chứng vào hệ thống, để đảm bảo dữ liệu tổ chức công chứng luôn đầy đủ.
+- Với vai trò là **Chuyên viên STP**, tôi muốn có thể thêm mới tổ chức công chứng thuộc Sở Tư pháp của tôi vào hệ thống, để đảm bảo dữ liệu tổ chức công chứng luôn đầy đủ.
 
 ## Acceptance Criteria
 - Hệ thống hiển thị form thêm mới tổ chức công chứng.
 - Hệ thống kiểm tra dữ liệu hợp lệ trước khi lưu thông tin tổ chức công chứng.
-- Nếu dữ liệu hợp lệ, hệ thống lưu tổ chức công chứng mới vào danh sách và hiển thị thông báo thành công.
+- Nếu dữ liệu hợp lệ, hệ thống lưu tổ chức công chứng mới vào danh sách quản lý và hiển thị thông báo thành công.
 - Nếu dữ liệu không hợp lệ, hiển thị thông báo lỗi cụ thể.
 - Người dùng có thể hủy thao tác thêm mới.
 

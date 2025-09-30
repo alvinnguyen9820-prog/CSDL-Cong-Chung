@@ -8,7 +8,12 @@ if (Có quyền?) then (Yes)
   :Người dùng điền thông tin tìm kiếm;
   :Người dùng lọc các điều kiện tìm kiếm;
   :Người dùng bấm nút tìm kiếm;
-  :Truy vấn dữ liệu tổ chức công chứng theo thông tin và điều kiện tìm kiếm;
+  if (Người dùng cấp Bộ) then (yes)
+    :Tải toàn bộ danh sách tổ chức hành nghề công chứng;
+  else (Người dùng cấp Sở)
+    :Tải danh sách tổ chức hành nghề công chứng thuộc Sở Tư pháp tương ứng;
+  endif
+  :Truy vấn dữ liệu tổ chức công chứng theo thông tin và điều kiện tìm kiếm trên danh sách bản ghi đã tải;
   if (Có dữ liệu?) then (Yes)
     :Hiển thị danh sách tổ chức công chứng theo thông tin và điều kiện tìm kiếm \n(**SCR_Org_List**);
     stop

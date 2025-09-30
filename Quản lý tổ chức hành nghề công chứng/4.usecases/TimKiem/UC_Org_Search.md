@@ -28,14 +28,16 @@
 2. Người dùng điền thông tin tìm kiếm (theo tên tổ chức công chứng)
 3. Người dùng lọc tiêu chí tìm kiếm
 4. Người dùng bấm nút "Tìm kiếm"
-5. Hệ thống truy vấn thông tin tổ chức công chứng
+5. Nếu người dùng thuộc cấp Bộ, hệ thống thực hiện truy vấn trên toàn bộ danh sách tổ chức công chứng của hệ thống
+6. Nếu người dùng thuộc cấp Sở, hệ thống truy vấn trên danh sách tổ chức công chứng thuộc Sở Tư pháp gắn với người dùng
+7. Hệ thống truy vấn thông tin tổ chức công chứng
     - Truy vấn họ và tên tổ chức công chứng gần giống với kết quả đã điền
     - Truy vấn chính xác theo trạng thái đã chọn
     - Truy vấn chính xác theo tỉnh thành của tổ chức công chứng đã chọn
-6. Hệ thống hiển thị danh sách công chứng theo kết quả đã truy vấn được
-7. Hệ thống hiển thị danh sách tổ chức công chứng theo thứ tự thời gian cập nhật từ mới tới cũ nhất
-8. Nếu số lượng bản ghi lớn hơn 10, hệ thống thực hiện phân trang, 10 bản ghi mỗi trang
-9. Kết thúc.
+8. Hệ thống hiển thị danh sách công chứng theo kết quả đã truy vấn được
+9. Hệ thống hiển thị danh sách tổ chức công chứng theo thứ tự thời gian cập nhật từ mới tới cũ nhất
+10. Nếu số lượng bản ghi lớn hơn 10, hệ thống thực hiện phân trang, 10 bản ghi mỗi trang
+11. Kết thúc.
 
 ## Luồng phụ / ngoại lệ
 - Nếu có lỗi tìm kiếm: hiển thị thông báo "Không tải được danh sách, vui lòng thử lại".
